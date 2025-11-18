@@ -376,7 +376,7 @@ jobs:
 
       - name: Generate Timestamp
         id: generate_timestamp
-        run: echo "TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
+        run: echo "TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")" >> $GITHUB_ENV
 
       - name: Upload Rebuild image to Release
         uses: ncipollo/release-action@main
