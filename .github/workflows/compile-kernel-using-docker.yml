@@ -212,11 +212,15 @@ jobs:
           kernel_toolchain: ${{ inputs.kernel_toolchain }}
           ccache_clear: ${{ inputs.ccache_clear }}
 
+      - name: Generate Timestamp
+        id: generate_timestamp
+        run: echo "TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")" >> $GITHUB_ENV
+
       - name: Upload Kernel to Release
         uses: ncipollo/release-action@main
         if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
         with:
-          tag: kernel_stable
+          tag: kernel_stable_${{ env.TIMESTAMP }}
           artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
           allowUpdates: true
           removeArtifacts: false
