@@ -250,8 +250,8 @@ runs:
 
             echo -e "Build kernel compilation command."
             make_command=""
-            [[ -n "${{ inputs.kernel_source }}" ]] && make_command="${make_command} -r torvalds/kernel"
-            [[ -n "${{ inputs.kernel_version }}" ]] && make_command="${make_command} -k master"
+            [[ -n "${{ inputs.kernel_source }}" ]] && make_command="${make_command} -r renren3221/kernel"
+            [[ -n "${{ inputs.kernel_version }}" ]] && make_command="${make_command} -k v6.16"
             [[ -n "${{ inputs.kernel_auto }}" ]] && make_command="${make_command} -a ${{ inputs.kernel_auto }}"
             [[ -n "${{ inputs.kernel_package }}" ]] && make_command="${make_command} -m ${{ inputs.kernel_package }}"
             [[ -n "${{ inputs.auto_patch }}" ]] && make_command="${make_command} -p ${{ inputs.auto_patch }}"
