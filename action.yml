@@ -170,7 +170,7 @@ runs:
             echo -e "Start to rebuild armbian..."
             make_command=""
             [[ -n "${{ inputs.armbian_board }}" ]] && make_command="${make_command} -b ${{ inputs.armbian_board }}"
-            [[ -n "${{ inputs.kernel_repo }}" ]] && make_command="${make_command} -r torvalds/linux"
+            [[ -n "${{ inputs.kernel_repo }}" ]] && make_command="${make_command} -r renren3221/linux"
             [[ -n "${{ inputs.kernel_usage }}" ]] && make_command="${make_command} -u ${{ inputs.kernel_usage }}"
             [[ -n "${{ inputs.armbian_kernel }}" ]] && make_command="${make_command} -k v6.16"
             [[ -n "${{ inputs.auto_kernel }}" ]] && make_command="${make_command} -a ${{ inputs.auto_kernel }}"
@@ -250,7 +250,7 @@ runs:
 
             echo -e "Build kernel compilation command."
             make_command=""
-            [[ -n "${{ inputs.kernel_source }}" ]] && make_command="${make_command} -r renren3221/kernel"
+            [[ -n "${{ inputs.kernel_source }}" ]] && make_command="${make_command} -r renren3221/linux"
             [[ -n "${{ inputs.kernel_version }}" ]] && make_command="${make_command} -k v6.16"
             [[ -n "${{ inputs.kernel_auto }}" ]] && make_command="${make_command} -a ${{ inputs.kernel_auto }}"
             [[ -n "${{ inputs.kernel_package }}" ]] && make_command="${make_command} -m ${{ inputs.kernel_package }}"
